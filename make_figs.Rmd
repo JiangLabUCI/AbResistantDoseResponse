@@ -239,7 +239,7 @@ effect_plot <- plot_grid(plot1, plot2, plot3, plot4,
           rel_widths = c(1.1,1),
           # rel_widths = c(9,8),
           scale=c(1.03,1.03,1.03,1.03))
-save_plot(paste(image_path, "effect_v2.pdf", sep=""), effect_plot,
+save_plot(paste(image_path, "effect.pdf", sep=""), effect_plot,
           ncol = 2, nrow = 2)
 ```
 
@@ -269,9 +269,9 @@ lwidth = 5; ht = 0.5; wd=0.5;bwidth = 1.5;
 c1 = "#1b9e7777"; c2 = "#d95f0277"; c3 = "#7570b3"; set.seed(0)
 cex_plot = 1.3; cex_txt = 1.5
 
-# jpeg(paste(image_path, "sensitivity.pdf", sep=""),
+# jpeg(paste(image_path, "sensitivity.jpeg", sep=""),
 #      width = 8, height = 8, units = 'in', res = 300)
-pdf(paste(image_path, "sensitivity_2.png", sep=""),
+pdf(paste(image_path, "sensitivity.pdf", sep=""),
      width = 8, height = 8)
 
 # Create the layout

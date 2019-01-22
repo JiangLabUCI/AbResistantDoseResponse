@@ -11,11 +11,10 @@ output:
 library(ggplot2)
 library(cowplot)
 library(xtable)
-setwd("C:/Users/srikiran/Google Drive/Lab work/Antibiotic_resistance/Scripts/final_ecoli")
 
 # Load the rquired functions
 z = source("helpers.R")
-image_path = "../../manuscript/sciadv_latex_template/images/"
+image_path = "images/"
 results_path = "results/"
 ```
 

@@ -221,7 +221,7 @@ get_plot_dataframes <- function(dataset_no, res){
     df_risk[leftind:rightind] = 1 - exp(-(r_s*Ns + r*Nr));
     df_riskbp[leftind:rightind] = 1 - (1+Nr/beta)^(-alpha) * (1+Ns/beta_s)^(-alpha_s)
     df_abfail[leftind:rightind] = ifelse(1-exp(-r*Nr) >= exp(-r*Nr)*(1-exp(-r_s*Ns)), "Untreatable", "Treatable");
-    df_abfailbp[leftind:rightind] = ifelse(1-(1+Nr/beta)^(-alpha) >= ((1+Nr/beta)^(-alpha))*(1-(1+Ns/beta_s)^(-alpha_s)), "Fails", "Works");
+    df_abfailbp[leftind:rightind] = ifelse(1-(1+Nr/beta)^(-alpha) >= ((1+Nr/beta)^(-alpha))*(1-(1+Ns/beta_s)^(-alpha_s)), "Untreatable", "Treatable");
   }
   df1 = data.frame(C = factor(df_C), risk = log10(df_risk), dose = log10(df_dose), abfail = df_abfail,
                    riskbp = log10(df_riskbp), abfailbp = df_abfailbp)
@@ -246,7 +246,7 @@ get_plot_dataframes <- function(dataset_no, res){
     df_risk[leftind:rightind] = 1 - exp(-(r_s*Ns + r*Nr));# 
     df_abfail[leftind:rightind] = ifelse(1-exp(-r*Nr) >= exp(-r*Nr)*(1-exp(-r_s*Ns)), "Untreatable", "Treatable");
     df_riskbp[leftind:rightind] = 1 - (1+Nr/beta)^(-alpha) * (1+Ns/beta_s)^(-alpha_s)
-    df_abfailbp[leftind:rightind] = ifelse(1-(1+Nr/beta)^(-alpha) >= ((1+Nr/beta)^(-alpha))*(1-(1+Ns/beta_s)^(-alpha_s)), "Fails", "Works");
+    df_abfailbp[leftind:rightind] = ifelse(1-(1+Nr/beta)^(-alpha) >= ((1+Nr/beta)^(-alpha))*(1-(1+Ns/beta_s)^(-alpha_s)), "Untreatable", "Treatable");
   }
   df2 = data.frame(fr = factor(df_fr), risk = log10(df_risk), dose = log10(df_dose), abfail = df_abfail,
                    riskbp = log10(df_riskbp), abfailbp = df_abfailbp)

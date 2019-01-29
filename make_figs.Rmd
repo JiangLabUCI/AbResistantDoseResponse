@@ -13,7 +13,7 @@ library(cowplot)
 library(xtable)
 
 # Load the rquired functions
-z = source("helpers.R")
+z = source("codes/helpers.R")
 image_path = "images/"
 results_path = "results/"
 ```

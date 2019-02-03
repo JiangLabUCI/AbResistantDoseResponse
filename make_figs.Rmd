@@ -10,6 +10,7 @@ output:
 # Load the required libraries
 library(ggplot2)
 library(cowplot)
+library(egg)
 library(xtable)
 
 # Load the rquired functions
@@ -135,7 +136,7 @@ xtable(df_data, display=c("d", "e", "d", "d"))
 
 ```{r}
 load(paste(results_path, "effect.Rda", sep=""))
-sz = 11; sz_ax = 14; sz_leg = 14;
+sz = 11; sz_ax = 14; sz_leg = 14; sz_lab = 7;
 ```
 
 ## Plot and assemble figure
@@ -156,14 +157,14 @@ labs(color=expression('%'~MIC), shape="Antibiotic")+theme_bw(base_size = sz)+
         axis.line = element_line(size=1),
         axis.text = element_text(face="bold", size=sz_ax),
         axis.title = element_text(size=sz_ax),
-        axis.ticks.x = element_blank(),
         axis.text.x = element_blank(),
         legend.text = element_text(size=sz_leg),
         legend.title = element_text(size=sz_leg),
         plot.background = element_blank())+
   guides(shape = guide_legend(direction = "horizontal", order=2),
          color = guide_legend(direction = "horizontal", order=1))+
-  scale_y_continuous(limits = c(-12.5, 0.5))
+  scale_y_continuous(limits = c(-12.5, 0.5))+
+  annotate("text", x=2, y=0, label="A", size=sz_lab, fontface="bold")
 
 # Exponential, fr
 df2 = top[[2]]
@@ -179,7 +180,6 @@ plot2 <- ggplot(df2, aes(dose)) +
         axis.line = element_line(size=1),
         axis.text = element_text(face="bold", size=sz_ax),
         axis.title = element_text(size=sz_ax),
-        axis.ticks = element_blank(),
         axis.text.x = element_blank(),
         axis.text.y = element_blank(),
         legend.text = element_text(size=sz_leg),
@@ -187,7 +187,8 @@ plot2 <- ggplot(df2, aes(dose)) +
         plot.background = element_blank())+
   guides(shape = guide_legend(direction = "horizontal", order=2),
          color = guide_legend(direction = "horizontal", order=1))+
-  scale_y_continuous(limits = c(-12.5, 0.5))
+  scale_y_continuous(limits = c(-12.5, 0.5))+
+  annotate("text", x=2, y=0, label="B", size=sz_lab, fontface="bold")
 
 # Beta Poisson, concentration
 df = bottom[[1]]
@@ -205,7 +206,8 @@ plot3 <- ggplot(df, aes(dose)) +
         legend.text = element_text(size=sz_leg),
         legend.title = element_text(size=sz_leg))+
   # annotate("text", x=5, y=-12, label="<same legend as above>", size=4.5)+
-  scale_y_continuous(limits = c(-12.5, 0.5))
+  scale_y_continuous(limits = c(-12.5, 0.5))+
+  annotate("text", x=2, y=0, label="C", size=sz_lab, fontface="bold")
 
 # Beta Poisson, fr
 df2 = bottom[[2]]
@@ -219,28 +221,24 @@ plot4 <- ggplot(df2, aes(dose)) +
         axis.line = element_line(size=1),
         axis.text = element_text(face="bold", size=sz_ax),
         axis.title = element_text(size=sz_ax),
-        axis.ticks.y = element_blank(),
         axis.text.y = element_blank(),
         legend.text = element_text(size=sz_leg),
         legend.title = element_text(size=sz_leg),
         plot.background = element_blank())+
   # annotate("text", x=5, y=-12, label="<same legend as above>", size=4.5)+
-  scale_y_continuous(limits = c(-12.5, 0.5))
-
-
+  scale_y_continuous(limits = c(-12.5, 0.5))+
+  annotate("text", x=2, y=0, label="D", size=sz_lab, fontface="bold")
 
 # Assemble the plots together and save
-effect_plot <- plot_grid(plot1, plot2, plot3, plot4,
-          labels = c("A", "B", "C", "D"),
-          label_x = c(0.158, 0.077, 0.158, 0.077),
-          label_y = c(0.72, 0.72, 0.965, 0.965),
-          ncol = 2, nrow = 2,
-          rel_heights = c(6,5),
-          rel_widths = c(1.1,1),
-          # rel_widths = c(9,8),
-          scale=c(1.03,1.03,1.03,1.03))
-save_plot(paste(image_path, "effect.pdf", sep=""), effect_plot,
-          ncol = 2, nrow = 2)
+ggsave(paste(image_path, "effect.pdf", sep=""),
+       arrangeGrob(grobs=lapply(list(plot1,
+                               plot2,
+                               plot3,
+                               plot4),
+                          set_panel_size,
+                          width=unit(10, "cm"),
+                          height=unit(9.5, "cm"))),
+       width=23.7, height=25, units="cm")
 ```
 
 

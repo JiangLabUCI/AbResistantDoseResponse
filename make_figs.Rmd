@@ -286,7 +286,7 @@ text(0.7, 0.95, expression(bold("A")), cex=cex_txt)
 lines(c(0,10), c(critval, critval), lty=2)
 
 # Beta Poisson with dose
-par(mar=c(4,4,0.5,0), lwd=bwidth)
+par(mar=c(4,4,0.5,0.2), lwd=bwidth)
 boxplot(t(res_beta$KS), names = parnames2, ylim = c(0, 1), ylab = "", outline=F,
         cex.axis = cex_plot, cex.sub=cex_plot, cex.lab=cex_plot)
 xvals = rep(seq(length(parnames2)), n); yvals = as.vector(res_beta$KS)
@@ -304,7 +304,7 @@ text(0.7, 0.95, expression(bold("C")), cex=cex_txt)
 lines(c(0,10), c(critval, critval), lty=2)
 
 # Beta Poisson without dose
-par(mar=c(4,4,0.5,0), lwd=bwidth)
+par(mar=c(4,4,0.5,0.2), lwd=bwidth)
 boxplot(t(resnd_beta$KS), names = parnames4, ylim = c(0, 1), outline=F,
         cex.axis = cex_plot, cex.sub=cex_plot, cex.lab=cex_plot)
 xvals = rep(seq(length(parnames4)), n); yvals = as.vector(resnd_beta$KS)

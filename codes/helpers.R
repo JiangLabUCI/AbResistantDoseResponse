@@ -1,9 +1,3 @@
-#' Get datasets.
-#' 
-#' @param choice An integer (1 or 2).
-#' @return A list containing the elements of the dataset no. \code{choice}.
-#' @examples
-#' getdat(1)
 getdat = function(choice){
   if (choice==1){
     # pooled 39, 40 (DuPont 1971)

@@ -73,7 +73,7 @@ dose = 10^seq(log10(min(ds$dose)), log10(max(ds$dose)), 0.02)  # Define the dose
 # Plot the first dataset
 par(mar=c(4.0,0.9,0.5,0.5))  # Set the margin for this plot and the next
 ## Plot the data
-plot(jitter(log10(ds$dose), factor=0.05), ds$nill/ds$ntot,
+plot(jitter(log10(ds$dose), factor=0.1), ds$nill/ds$ntot,
      xlab=expression(Log[10]~(dose)),
      ylim=c(-0,1), bg = c1, pch = 21, cex=cex_data,
      cex.axis = cex_plot, cex.lab=cex_plot);

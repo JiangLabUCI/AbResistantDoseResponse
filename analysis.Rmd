@@ -19,11 +19,16 @@ ndat = 2; # Number of datasets
 AICe = seq(1, ndat); AICb = seq(1, ndat);  # Uncorrected AICs
 AICce = seq(1, ndat); AICcb = seq(1, ndat);  # AIC with small sample correction
 expdev = seq(1, ndat); betadev = seq(1, ndat);  # Minimum deviances of the models
+
 # The best parameters for the fitted models
 bestr = seq(1, ndat); bestalpha = seq(1, ndat); bestbeta = seq(1, ndat);
 # Optionally store the p_values of the fit (comment out llines with p_beta and p_exp)
-# p_exp = seq(1, ndat); p_beta = seq(1, ndat);
+p_exp = seq(1, ndat); p_beta = seq(1, ndat);
+p_expbeta = seq(1, ndat);
 mu_exp = seq(1, ndat);  # Calculate mu for the exponential model
+# Cochran-Armitage test from Manual of Environmental Microbiology
+zca = seq(1, ndat);
+chisq_exp = seq(1, ndat); chisq_beta = seq(1, ndat);
 set.seed(0)
 for (ind in seq(ndat)){
   ds = getdat(ind)  # Get and store the dataset
@@ -44,21 +49,40 @@ for (ind in seq(ndat)){
   bestalpha[ind] = 10^solbeta$optim$bestmem[1]
   bestbeta[ind] = 10^solbeta$optim$bestmem[2]
   mu_exp[ind] = -1/ds$t * log1mexpm(bestr[ind])
-  # p_exp[ind] = 1 - pchisq(expdev[ind],n-1)
-  # p_beta[ind] = 1 - pchisq(betadev[ind],n-2)
+  p_exp[ind] = 1 - pchisq(expdev[ind],n-1)
+  p_beta[ind] = 1 - pchisq(betadev[ind],n-2)
+  chisq_exp[ind] = qchisq(0.95, n-1)
+  chisq_beta[ind] = qchisq(0.95, n-2)
+  p_expbeta[ind] = 1 - pchisq(expdev[ind] - betadev[ind],1)
+  d = ds$dose;
+  t = ds$ntot;
+  p = ds$nill;
+  n = t
+  xbar = sum(n*d) / sum(n);
+  pbar = sum(p) / sum(n);
+  z = sum((d - xbar) * p) / sqrt(pbar * (1-pbar) * sum(n * (d-xbar)^2));
+  zca[ind] = z;
 }
 
 # Store the important columns in a data frame
-results = data.frame(expdev = expdev, betadev = betadev, 
-                     # pexp = p_exp, pbeta = p_beta,
+results = data.frame(expdev = expdev, chisq_exp = chisq_exp,
+                     betadev = betadev, chisq_beta = chisq_beta,
+                     dev_diff = expdev-betadev,
+                     pexp = p_exp, pbeta = p_beta,
+                     pexpbeta = p_expbeta,
                      # AIC_exp = AICe, AIC_beta = AICb,
                      AICc_exp = AICce, AICc_beta = AICcb,
                      r = bestr,
                      alpha = bestalpha, beta = bestbeta,
                      mu_r = mu_exp,
-                     # mod = ifelse(p_exp<0.05, "beta", "exp")
-                     mod = ifelse(AICcb<AICce, "beta", "exp"))
-results
+                     modchisq = ifelse(expdev-betadev < qchisq(0.95,1), "exp", "beta"),
+                     mod = ifelse(AICcb<AICce, "beta", "exp"),
+                     pass_trend = ifelse(zca>qnorm(0.95), "true", "false"),
+                     zca=zca)
+results2 = data.frame(dev=as.vector(t(matrix(c(expdev, betadev, expdev-betadev), 2, 3))),
+                      chisq = as.vector(t(matrix(c(chisq_exp, chisq_beta, c(3.84,3.84)), 2, 3))),
+                      p=as.vector(t(matrix(c(p_exp, p_beta, p_expbeta), 2, 3))))
+round(results2,2)
 # Save the results
 save(results, file=paste(results_path, "fit.Rda", sep=""))
 ```

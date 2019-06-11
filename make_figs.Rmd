@@ -24,7 +24,7 @@ results_path = "results/"
 p1 <- ggdraw() + draw_image(paste(image_path, "sdproc.png", sep=""),  scale = 0.9)
 p2 <- ggdraw() + draw_image(paste(image_path, "arrow.png", sep=""), scale = 0.9)
 # Use `plot_grid` to assemble figure 1 from the base figures.
-f1 <- plot_grid(p1, p2, labels = "AUTO")
+f1 <- plot_grid(p1, p2, labels = c("a", "b"))
 save_plot(paste(image_path, "fig1.pdf", sep=""), f1, ncol=2)
 ```
 
@@ -81,7 +81,7 @@ plot(jitter(log10(ds$dose), factor=0.1), ds$nill/ds$ntot,
 lines(log10(dose), 1-exp(-r*dose), lwd=lwidth, lty=lty1)
 lines(log10(dose), 1-(1+dose/beta)^(-alpha), lwd=lwidth, lty=lty2)
 box(lwd=bwidth)
-text(4.0, 0.95, expression(bold("A")), cex=cex_text)
+text(4.0, 0.95, expression(bold("a")), cex=cex_text)
 
 # Retrieve beta Poisson model fit
 dataset_no = 2;
@@ -101,7 +101,7 @@ plot(jitter(log10(ds$dose), factor=0.05), ds$nill/ds$ntot,
 lines(log10(dose), 1-exp(-r*dose), lwd=lwidth, lty=lty1)
 lines(log10(dose), 1-(1+dose/beta)^(-alpha), lwd=lwidth, lty=lty2)
 box(lwd=bwidth)
-text(6.0, 0.95, expression(bold("B")), cex=cex_text)
+text(6.0, 0.95, expression(bold("b")), cex=cex_text)
 
 # Plot the legend
 par(mar=c(0,0.1,0,1), lwd=bwidth)  # Reset the margin
@@ -136,7 +136,7 @@ xtable(df_data, display=c("d", "e", "d", "d"))
 
 ```{r}
 load(paste(results_path, "effect.Rda", sep=""))
-sz = 11; sz_ax = 14; sz_leg = 14; sz_lab = 7;
+sz = 11; sz_ax = 14; sz_leg = 14; sz_lab = 6;
 ```
 
 ## Plot and assemble figure
@@ -164,7 +164,7 @@ labs(color=expression('%'~MIC), shape="Antibiotic")+theme_bw(base_size = sz)+
   guides(shape = guide_legend(direction = "horizontal", order=2),
          color = guide_legend(direction = "horizontal", order=1))+
   scale_y_continuous(limits = c(-12.5, 0.5))+
-  annotate("text", x=2, y=0, label="A", size=sz_lab, fontface="bold")
+  annotate("text", x=2, y=0, label="a", size=sz_lab, fontface="bold")
 
 # Exponential, fr
 df2 = top[[2]]
@@ -188,7 +188,7 @@ plot2 <- ggplot(df2, aes(dose)) +
   guides(shape = guide_legend(direction = "horizontal", order=2),
          color = guide_legend(direction = "horizontal", order=1))+
   scale_y_continuous(limits = c(-12.5, 0.5))+
-  annotate("text", x=2, y=0, label="B", size=sz_lab, fontface="bold")
+  annotate("text", x=2, y=0, label="b", size=sz_lab, fontface="bold")
 
 # Beta Poisson, concentration
 df = bottom[[1]]
@@ -207,7 +207,7 @@ plot3 <- ggplot(df, aes(dose)) +
         legend.title = element_text(size=sz_leg))+
   # annotate("text", x=5, y=-12, label="<same legend as above>", size=4.5)+
   scale_y_continuous(limits = c(-12.5, 0.5))+
-  annotate("text", x=2, y=0, label="C", size=sz_lab, fontface="bold")
+  annotate("text", x=2, y=0, label="c", size=sz_lab, fontface="bold")
 
 # Beta Poisson, fr
 df2 = bottom[[2]]
@@ -227,7 +227,7 @@ plot4 <- ggplot(df2, aes(dose)) +
         plot.background = element_blank())+
   # annotate("text", x=5, y=-12, label="<same legend as above>", size=4.5)+
   scale_y_continuous(limits = c(-12.5, 0.5))+
-  annotate("text", x=2, y=0, label="D", size=sz_lab, fontface="bold")
+  annotate("text", x=2, y=0, label="d", size=sz_lab, fontface="bold")
 
 # Assemble the plots together and save
 ggsave(paste(image_path, "effect.pdf", sep=""),
@@ -282,7 +282,7 @@ boxplot(t(res_exp$KS), names = parnames1, ylim = c(0, 1), ylab="PAWN index", out
         cex.axis = cex_plot, cex.sub=cex_plot, cex.lab=cex_plot)
 xvals = rep(seq(length(parnames1)), n); yvals = as.vector(res_exp$KS)
 points(jitter(xvals,factor=1.5), yvals, bg=c1, pch=21)
-text(0.7, 0.95, expression(bold("A")), cex=cex_txt)
+text(0.7, 0.95, expression(bold("a")), cex=cex_txt)
 lines(c(0,10), c(critval, critval), lty=2)
 
 # Beta Poisson with dose
@@ -291,7 +291,7 @@ boxplot(t(res_beta$KS), names = parnames2, ylim = c(0, 1), ylab = "", outline=F,
         cex.axis = cex_plot, cex.sub=cex_plot, cex.lab=cex_plot)
 xvals = rep(seq(length(parnames2)), n); yvals = as.vector(res_beta$KS)
 points(jitter(xvals,factor=1.5), yvals, bg=c1, pch=21)
-text(0.7, 0.95, expression(bold("B")), cex=cex_txt)
+text(0.7, 0.95, expression(bold("b")), cex=cex_txt)
 lines(c(0,10), c(critval, critval), lty=2)
 
 # Exponential without dose
@@ -300,7 +300,7 @@ boxplot(t(resnd_exp$KS), names = parnames3, ylim = c(0, 1), ylab="PAWN index", o
         cex.axis = cex_plot, cex.sub=cex_plot, cex.lab=cex_plot)
 xvals = rep(seq(length(parnames3)), n); yvals = as.vector(resnd_exp$KS)
 points(jitter(xvals,factor=1.5), yvals, bg=c2, pch=21)
-text(0.7, 0.95, expression(bold("C")), cex=cex_txt)
+text(0.7, 0.95, expression(bold("c")), cex=cex_txt)
 lines(c(0,10), c(critval, critval), lty=2)
 
 # Beta Poisson without dose
@@ -309,7 +309,7 @@ boxplot(t(resnd_beta$KS), names = parnames4, ylim = c(0, 1), outline=F,
         cex.axis = cex_plot, cex.sub=cex_plot, cex.lab=cex_plot)
 xvals = rep(seq(length(parnames4)), n); yvals = as.vector(resnd_beta$KS)
 points(jitter(xvals,factor=1.5), yvals, bg=c2, pch=21)
-text(0.7, 0.95, expression(bold("D")), cex=cex_txt)
+text(0.7, 0.95, expression(bold("d")), cex=cex_txt)
 lines(c(0,10), c(critval, critval), lty=2)
 
 dev.off()

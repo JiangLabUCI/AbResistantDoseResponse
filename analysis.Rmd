@@ -78,7 +78,7 @@ results = data.frame(expdev = expdev, chisq_exp = chisq_exp,
                      modchisq = ifelse(expdev-betadev < qchisq(0.95,1), "exp", "beta"),
                      mod = ifelse(AICcb<AICce, "beta", "exp"),
                      pass_trend = ifelse(zca>qnorm(0.95), "true", "false"),
-                     zca=zca)
+                     zca=zca, pca = 1-pnorm(zca))
 results2 = data.frame(dev=as.vector(t(matrix(c(expdev, betadev, expdev-betadev), 2, 3))),
                       chisq = as.vector(t(matrix(c(chisq_exp, chisq_beta, c(3.84,3.84)), 2, 3))),
                       p=as.vector(t(matrix(c(p_exp, p_beta, p_expbeta), 2, 3))))

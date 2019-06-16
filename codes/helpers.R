@@ -264,7 +264,7 @@ get_plot_dataframes <- function(dataset_no, res) {
   # mg/L
   set.seed(42)
   r_s = getr(r, C, all_dat)
-  res = getalphabeta(alpha, beta, pMIC[ind2] * MIC, all_dat, seed = 42);
+  res = getalphabeta(alpha, beta, C, all_dat, seed = 42);
   res
   alpha_s = res[[1]];
   beta_s = res[[2]];

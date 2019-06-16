@@ -94,6 +94,8 @@ save(results, file=paste(results_path, "fit.Rda", sep=""))
 top = get_plot_dataframes(1, results);
 bottom = get_plot_dataframes(2, results);
 save(top, bottom, file=paste(results_path, "effect.Rda", sep=""))
+# Some NaNs will be produced by the getalphabeta function.
+# The verifying beta snippets and plot suggest that this does not significantly alter conclusions.
 ```
 
 # Sensitivity analysis

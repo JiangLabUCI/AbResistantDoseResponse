@@ -144,6 +144,7 @@ Make the plots and store them in handles. Then use `grid_extra` from the `cowplo
 
 ```{r}
 # Exponential, concentration
+llim = -7.8
 df = top[[1]]
 plot1 <- ggplot(df, aes(dose)) +
   geom_line(aes(y=risk, color=C), size=1.5)+
@@ -163,7 +164,7 @@ labs(color=expression('%'~MIC), shape="Antibiotic")+theme_bw(base_size = sz)+
         plot.background = element_blank())+
   guides(shape = guide_legend(direction = "horizontal", order=2),
          color = guide_legend(direction = "horizontal", order=1))+
-  scale_y_continuous(limits = c(-12.5, 0.5))+
+  scale_y_continuous(limits = c(llim, 0.5))+
   annotate("text", x=2, y=0, label="a", size=sz_lab, fontface="bold")
 
 # Exponential, fr
@@ -187,7 +188,7 @@ plot2 <- ggplot(df2, aes(dose)) +
         plot.background = element_blank())+
   guides(shape = guide_legend(direction = "horizontal", order=2),
          color = guide_legend(direction = "horizontal", order=1))+
-  scale_y_continuous(limits = c(-12.5, 0.5))+
+  scale_y_continuous(limits = c(llim, 0.5))+
   annotate("text", x=2, y=0, label="b", size=sz_lab, fontface="bold")
 
 # Beta Poisson, concentration
@@ -206,7 +207,7 @@ plot3 <- ggplot(df, aes(dose)) +
         legend.text = element_text(size=sz_leg),
         legend.title = element_text(size=sz_leg))+
   # annotate("text", x=5, y=-12, label="<same legend as above>", size=4.5)+
-  scale_y_continuous(limits = c(-12.5, 0.5))+
+  scale_y_continuous(limits = c(llim, 0.5))+
   annotate("text", x=2, y=0, label="c", size=sz_lab, fontface="bold")
 
 # Beta Poisson, fr
@@ -226,7 +227,7 @@ plot4 <- ggplot(df2, aes(dose)) +
         legend.title = element_text(size=sz_leg),
         plot.background = element_blank())+
   # annotate("text", x=5, y=-12, label="<same legend as above>", size=4.5)+
-  scale_y_continuous(limits = c(-12.5, 0.5))+
+  scale_y_continuous(limits = c(llim, 0.5))+
   annotate("text", x=2, y=0, label="d", size=sz_lab, fontface="bold")
 
 # Assemble the plots together and save

@@ -266,7 +266,7 @@ parnames4 = c('C', expression(f[r]), expression(E[max]), 'EC50',
 # Plot parameters
 lwidth = 5; ht = 0.5; wd=0.5;bwidth = 1.5;
 c1 = "#1b9e7777"; c2 = "#d95f0277"; c3 = "#7570b3"; set.seed(0)
-cex_plot = 1.3; cex_txt = 1.5
+cex_plot = 1.3; cex_txt = 1.5; rot = 30;
 
 # jpeg(paste(image_path, "sensitivity.jpeg", sep=""),
 #      width = 8, height = 8, units = 'in', res = 300)
@@ -279,8 +279,10 @@ layout(mat=m, heights = c(ht,1-ht), widths=c(wd, 1-wd))
 
 # Exponential with dose
 par(mar = c(4,4,0.5,0), lwd=bwidth)
-boxplot(t(res_exp$KS), names = parnames1, ylim = c(0, 1), ylab="PAWN index", outline=F,
-        cex.axis = cex_plot, cex.sub=cex_plot, cex.lab=cex_plot)
+boxplot(t(res_exp$KS), ylim = c(0, 1), ylab="PAWN index", outline=F,
+        cex.axis = cex_plot, cex.sub=cex_plot, cex.lab=cex_plot, xaxt="n")
+axis(1, labels=FALSE)
+text(x=seq_along(parnames1), y=-0.1, srt = rot, adj= 1, xpd = TRUE, labels = parnames1 , cex=cex_plot)
 xvals = rep(seq(length(parnames1)), n); yvals = as.vector(res_exp$KS)
 points(jitter(xvals,factor=1.5), yvals, bg=c1, pch=21)
 text(0.7, 0.95, expression(bold("a")), cex=cex_txt)
@@ -288,8 +290,10 @@ lines(c(0,10), c(critval, critval), lty=2)
 
 # Beta Poisson with dose
 par(mar=c(4,4,0.5,0.2), lwd=bwidth)
-boxplot(t(res_beta$KS), names = parnames2, ylim = c(0, 1), ylab = "", outline=F,
-        cex.axis = cex_plot, cex.sub=cex_plot, cex.lab=cex_plot)
+boxplot(t(res_beta$KS), ylim = c(0, 1), ylab = "", outline=F,
+        cex.axis = cex_plot, cex.sub=cex_plot, cex.lab=cex_plot, xaxt="n", xlab="")
+axis(1, at=seq_along(parnames2), labels=FALSE)
+text(x=seq_along(parnames2), y=-0.1, srt = rot, adj= 1, xpd = TRUE, labels = parnames2 , cex=cex_plot)
 xvals = rep(seq(length(parnames2)), n); yvals = as.vector(res_beta$KS)
 points(jitter(xvals,factor=1.5), yvals, bg=c1, pch=21)
 text(0.7, 0.95, expression(bold("b")), cex=cex_txt)
@@ -297,8 +301,10 @@ lines(c(0,10), c(critval, critval), lty=2)
 
 # Exponential without dose
 par(mar=c(4,4,0.5,0), lwd=bwidth)
-boxplot(t(resnd_exp$KS), names = parnames3, ylim = c(0, 1), ylab="PAWN index", outline=F,
-        cex.axis = cex_plot, cex.sub=cex_plot, cex.lab=cex_plot)
+boxplot(t(resnd_exp$KS), ylim = c(0, 1), ylab="PAWN index", outline=F,
+        cex.axis = cex_plot, cex.sub=cex_plot, cex.lab=cex_plot, xaxt="n")
+axis(1, labels=FALSE)
+text(x=seq_along(parnames3), y=-0.1, srt = rot, adj= 1, xpd = TRUE, labels = parnames3 , cex=cex_plot)
 xvals = rep(seq(length(parnames3)), n); yvals = as.vector(resnd_exp$KS)
 points(jitter(xvals,factor=1.5), yvals, bg=c2, pch=21)
 text(0.7, 0.95, expression(bold("c")), cex=cex_txt)
@@ -306,8 +312,10 @@ lines(c(0,10), c(critval, critval), lty=2)
 
 # Beta Poisson without dose
 par(mar=c(4,4,0.5,0.2), lwd=bwidth)
-boxplot(t(resnd_beta$KS), names = parnames4, ylim = c(0, 1), outline=F,
-        cex.axis = cex_plot, cex.sub=cex_plot, cex.lab=cex_plot)
+boxplot(t(resnd_beta$KS), ylim = c(0, 1), outline=F,
+        cex.axis = cex_plot, cex.sub=cex_plot, cex.lab=cex_plot, xaxt="n")
+axis(1, labels=FALSE)
+text(x=seq_along(parnames4), y=-0.1, srt = rot, adj= 1, xpd = TRUE, labels = parnames4 , cex=cex_plot)
 xvals = rep(seq(length(parnames4)), n); yvals = as.vector(resnd_beta$KS)
 points(jitter(xvals,factor=1.5), yvals, bg=c2, pch=21)
 text(0.7, 0.95, expression(bold("d")), cex=cex_txt)

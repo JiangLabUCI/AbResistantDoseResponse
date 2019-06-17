@@ -8,8 +8,8 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    style="font-style:normal;font-weight:normal;font-size:12px;font-family:Dialog;color-interpolation:auto;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto"
-   width="1130.5094"
-   height="511.38535"
+   width="1133.1367"
+   height="516.31659"
    version="1.1"
    id="svg176"
    sodipodi:docname="fig1.svg"
@@ -40,8 +40,8 @@
      id="namedview178"
      showgrid="false"
      inkscape:zoom="1.0142857"
-     inkscape:cx="322.36649"
-     inkscape:cy="276.30996"
+     inkscape:cx="581.91046"
+     inkscape:cy="278.07365"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
@@ -54,7 +54,7 @@
   <g
      id="g62-3"
      style="font-style:normal;font-weight:normal;font-size:12px;font-family:Dialog;color-interpolation:sRGB;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:optimizeSpeed;image-rendering:optimizeSpeed;shape-rendering:crispEdges;text-rendering:optimizeSpeed"
-     transform="translate(570.50938,60.733141)">
+     transform="translate(573.13672,63.900719)">
     <rect
        id="rect58-7"
        style="stroke:none"
@@ -560,7 +560,7 @@
   <g
      id="g56"
      style="fill:#ffffff;stroke:#ffffff"
-     transform="translate(10.509375,60.733141)">
+     transform="translate(13.136719,63.900719)">
     <rect
        id="rect54"
        clip-path="url(#clipPath1)"
@@ -573,7 +573,7 @@
   <g
      id="g62"
      style="color-interpolation:sRGB;fill:#ffffff;stroke:#ffffff;color-rendering:optimizeSpeed;image-rendering:optimizeSpeed;shape-rendering:crispEdges;text-rendering:optimizeSpeed"
-     transform="translate(10.509375,60.733141)">
+     transform="translate(13.136719,63.900719)">
     <rect
        id="rect58"
        style="stroke:none"
@@ -590,7 +590,7 @@
   <g
      id="g68"
      style="color-interpolation:linearRGB;fill:#262626;stroke:#262626;stroke-width:2.66669989;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
-     transform="translate(10.509375,60.733141)">
+     transform="translate(13.136719,63.900719)">
     <line
        id="line64"
        y1="374"
@@ -609,7 +609,7 @@
   <g
      id="g72"
      style="font-size:23.4666996px;font-family:SansSerif;color-interpolation:linearRGB;fill:#262626;stroke:#262626;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
-     transform="translate(300.50957,441.66644)">
+     transform="translate(303.13691,444.83402)">
     <text
        id="text70"
        style="stroke:none"
@@ -620,7 +620,7 @@
   <g
      id="g102"
      style="color-interpolation:linearRGB;fill:#262626;stroke:#262626;stroke-width:2.66669989;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
-     transform="translate(10.509375,60.733141)">
+     transform="translate(13.136719,63.900719)">
     <line
        id="line74"
        y1="374"
@@ -723,7 +723,7 @@
   <g
      id="g106"
      style="font-size:21.33329964px;font-family:SansSerif;color-interpolation:linearRGB;fill:#262626;stroke:#262626;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
-     transform="translate(76.576075,434.73314)">
+     transform="translate(79.203419,437.90072)">
     <text
        id="text104"
        style="stroke:none"
@@ -734,7 +734,7 @@
   <g
      id="g110"
      style="font-size:21.33329964px;font-family:SansSerif;color-interpolation:linearRGB;fill:#262626;stroke:#262626;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
-     transform="translate(76.576075,366.13314)">
+     transform="translate(79.203419,369.30072)">
     <text
        id="text108"
        style="stroke:none"
@@ -745,7 +745,7 @@
   <g
      id="g114"
      style="font-size:21.33329964px;font-family:SansSerif;color-interpolation:linearRGB;fill:#262626;stroke:#262626;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
-     transform="translate(76.576075,297.53314)">
+     transform="translate(79.203419,300.70072)">
     <text
        id="text112"
        style="stroke:none"
@@ -756,7 +756,7 @@
   <g
      id="g118"
      style="font-size:21.33329964px;font-family:SansSerif;color-interpolation:linearRGB;fill:#262626;stroke:#262626;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
-     transform="translate(76.576075,228.93314)">
+     transform="translate(79.203419,232.10072)">
     <text
        id="text116"
        style="stroke:none"
@@ -767,7 +767,7 @@
   <g
      id="g122"
      style="font-size:21.33329964px;font-family:SansSerif;color-interpolation:linearRGB;fill:#262626;stroke:#262626;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
-     transform="translate(76.576075,160.33314)">
+     transform="translate(79.203419,163.50072)">
     <text
        id="text120"
        style="stroke:none"
@@ -778,7 +778,7 @@
   <g
      id="g126"
      style="font-size:21.33329964px;font-family:SansSerif;color-interpolation:linearRGB;fill:#262626;stroke:#262626;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
-     transform="translate(76.576075,91.733139)">
+     transform="translate(79.203419,94.900717)">
     <text
        id="text124"
        style="stroke:none"
@@ -789,7 +789,7 @@
   <g
      id="g130"
      style="font-size:23.4666996px;font-family:SansSerif;color-interpolation:linearRGB;fill:#262626;stroke:#262626;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
-     transform="rotate(-90,155.90451,107.32843)">
+     transform="rotate(-90,158.80197,107.59855)">
     <text
        id="text128"
        style="stroke:none"
@@ -800,7 +800,7 @@
   <g
      id="g136"
      style="color-interpolation:linearRGB;fill:#1b9e77;stroke:#1b9e77;stroke-width:4;stroke-linecap:butt;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
-     transform="translate(10.509375,60.733141)">
+     transform="translate(13.136719,63.900719)">
     <path
        inkscape:connector-curvature="0"
        id="path132"
@@ -815,7 +815,7 @@
   <g
      id="g140"
      style="color-interpolation:linearRGB;fill:#d95f02;stroke:#d95f02;stroke-width:2.66669989;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:1;stroke-dasharray:2, 2;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
-     transform="translate(10.509375,60.733141)">
+     transform="translate(13.136719,63.900719)">
     <path
        inkscape:connector-curvature="0"
        id="path138"
@@ -824,13 +824,13 @@
   </g>
   <path
      style="color-interpolation:sRGB;fill:#ffffff;stroke:none;color-rendering:optimizeSpeed;image-rendering:optimizeSpeed;shape-rendering:crispEdges;text-rendering:optimizeSpeed"
-     d="m 506.50937,182.73314 v -80 h -185 v 80 z"
+     d="m 509.13671,185.90072 v -80 h -185 v 80 z"
      id="path142"
      inkscape:connector-curvature="0" />
   <g
      id="g148"
      style="font-size:19.20000076px;font-family:SansSerif;color-interpolation:linearRGB;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
-     transform="translate(350.50937,117.23314)">
+     transform="translate(353.13671,120.40072)">
     <text
        id="text146"
        style="stroke:none"
@@ -841,7 +841,7 @@
   <g
      id="g152"
      style="color-interpolation:linearRGB;fill:#1b9e77;stroke:#1b9e77;stroke-width:4;stroke-linecap:butt;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
-     transform="translate(-7.490625,60.733141)">
+     transform="translate(-4.8632812,63.900719)">
     <line
        id="line150"
        y1="56.5"
@@ -853,7 +853,7 @@
   <g
      id="g156"
      style="font-size:19.20000076px;font-family:SansSerif;color-interpolation:linearRGB;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
-     transform="translate(350.50937,142.73314)">
+     transform="translate(353.13671,145.90072)">
     <text
        id="text154"
        style="stroke:none"
@@ -864,7 +864,7 @@
   <g
      id="g160"
      style="color-interpolation:linearRGB;fill:#d95f02;stroke:#d95f02;stroke-width:4;stroke-linecap:butt;stroke-linejoin:round;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
-     transform="translate(-7.490625,60.733141)">
+     transform="translate(-4.8632812,63.900719)">
     <line
        id="line158"
        y1="82"
@@ -876,7 +876,7 @@
   <g
      id="g164"
      style="font-size:19.20000076px;font-family:SansSerif;color-interpolation:linearRGB;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
-     transform="translate(350.50937,168.23314)">
+     transform="translate(353.13671,171.40072)">
     <text
        id="text162"
        style="stroke:none"
@@ -887,7 +887,7 @@
   <g
      id="g168"
      style="color-interpolation:linearRGB;fill:#d95f02;stroke:#d95f02;stroke-width:2.66669989;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:1;stroke-dasharray:2, 2;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
-     transform="translate(-7.490625,60.733141)">
+     transform="translate(-4.8632812,63.900719)">
     <line
        id="line166"
        y1="107.5"
@@ -899,7 +899,7 @@
   <g
      id="g172"
      style="color-interpolation:linearRGB;fill:#262626;stroke:#262626;stroke-width:2.66669989;stroke-linecap:butt;color-rendering:optimizeQuality;image-rendering:optimizeQuality;text-rendering:geometricPrecision"
-     transform="matrix(1.1058545,0,0,0.99830974,-42.062085,60.871742)">
+     transform="matrix(1.1058545,0,0,0.99830974,-39.434741,64.03932)">
     <path
        inkscape:connector-curvature="0"
        id="path170"
@@ -907,7 +907,7 @@
        d="M 311,122 V 42 h 185 v 80 z" />
   </g>
   <g
-     transform="matrix(3.4055624,0,0,3.4055624,286.23457,9.356441)"
+     transform="matrix(3.4055624,0,0,3.4055624,288.86191,12.524019)"
      id="layer1"
      inkscape:label="Layer 1">
     <path
@@ -1228,27 +1228,27 @@
   <g
      id="g148-6"
      style="font-style:normal;font-weight:normal;font-size:19.20000076px;font-family:SansSerif;color-interpolation:linearRGB;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:optimizeQuality;image-rendering:optimizeQuality;shape-rendering:auto;text-rendering:geometricPrecision"
-     transform="translate(-0.80625003,5.1703126)">
+     transform="translate(-1.0078125,8.3378906)">
     <text
        id="text146-6"
        style="stroke:none"
        y="7.5"
        xml:space="preserve"
        x="0"><tspan
-         style="font-weight:bold"
+         style="font-weight:bold;font-size:24px"
          id="tspan348">a</tspan></text>
   </g>
   <g
      id="g148-6-7"
      style="font-style:normal;font-weight:normal;font-size:19.20000076px;font-family:SansSerif;color-interpolation:linearRGB;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:optimizeQuality;image-rendering:optimizeQuality;shape-rendering:auto;text-rendering:geometricPrecision"
-     transform="translate(568.91562,7.0875006)">
+     transform="translate(571.54296,10.734375)">
     <text
        id="text146-6-9"
        style="stroke:none"
        y="7.5"
        xml:space="preserve"
        x="0"><tspan
-         style="font-weight:bold"
+         style="font-weight:bold;font-size:24px"
          id="tspan348-4">b</tspan></text>
   </g>
 </svg>

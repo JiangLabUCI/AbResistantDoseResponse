@@ -21,11 +21,12 @@ results_path = "results/"
 
 # Explanatory figure 
 ```{r}
-p1 <- ggdraw() + draw_image(paste(image_path, "sdproc.png", sep=""),  scale = 0.9)
-p2 <- ggdraw() + draw_image(paste(image_path, "arrow.png", sep=""), scale = 0.9)
+p1 <- ggdraw() + draw_image(paste(image_path, "sdproc.svg", sep=""),  scale = 0.9)
+p2 <- ggdraw() + draw_image(paste(image_path, "arrow.svg", sep=""), scale = 0.9)
 # Use `plot_grid` to assemble figure 1 from the base figures.
 f1 <- plot_grid(p1, p2, labels = c("a", "b"))
-save_plot(paste(image_path, "fig1.pdf", sep=""), f1, ncol=2)
+save_plot(paste(image_path, "fig1.png", sep=""), f1, ncol=2)
+# This file is not used anymore to make fig1. Directly edit the SVG instead.
 ```
 
 # Fitting figure

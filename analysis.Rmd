@@ -26,7 +26,7 @@ bestr = seq(1, ndat); bestalpha = seq(1, ndat); bestbeta = seq(1, ndat);
 p_exp = seq(1, ndat); p_beta = seq(1, ndat);
 p_expbeta = seq(1, ndat);
 mu_exp = seq(1, ndat);  # Calculate mu for the exponential model
-# Cochran-Armitage test from Manual of Environmental Microbiology
+# Cochran-Armitage test from Haas 2014, page 301
 zca = seq(1, ndat);
 chisq_exp = seq(1, ndat); chisq_beta = seq(1, ndat);
 set.seed(0)
@@ -54,13 +54,13 @@ for (ind in seq(ndat)){
   chisq_exp[ind] = qchisq(0.95, n-1)
   chisq_beta[ind] = qchisq(0.95, n-2)
   p_expbeta[ind] = 1 - pchisq(expdev[ind] - betadev[ind],1)
-  d = ds$dose;
+  x = log(ds$dose);
   t = ds$ntot;
   p = ds$nill;
   n = t
-  xbar = sum(n*d) / sum(n);
+  xbar = sum(n*x) / sum(n);
   pbar = sum(p) / sum(n);
-  z = sum((d - xbar) * p) / sqrt(pbar * (1-pbar) * sum(n * (d-xbar)^2));
+  z = sum((x - xbar) * p) / sqrt(pbar * (1-pbar) * sum(n * (x-xbar)^2));
   zca[ind] = z;
 }
 
